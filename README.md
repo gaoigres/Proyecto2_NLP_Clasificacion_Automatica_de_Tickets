@@ -63,18 +63,36 @@ Se entrenaron y compararon los siguientes modelos:
 
 | Modelo               | F1 Macro (aprox.) |
 |----------------------|------------------|
-| Regresión Logística  | 0.67             |
-| Árbol de Decisión    | 0.53             |
-| **Random Forest**    | **0.73**         |
+| Regresión Logística  | **0.96**             |
+| Árbol de Decisión    | 0.85             |
+| **Random Forest**    | 0.89         |
 
-**Modelo final seleccionado:** **Random Forest**  
+**Modelo final seleccionado:** **Regresión logística**  
 Motivo: mejor equilibrio entre precisión y generalización.
 
 ---
 
-## 7. Inferencia del Modelo (Nuevos Reclamos)
+## 6. Inferencia del Modelo (Nuevos Reclamos)
 
-Interpretación del Rendimiento del Modelo
+Ejemplo de predicción:
+
+```python
+predict_topics([
+    "My credit card was charged twice and the bank rejected my dispute.",
+    "Mortgage payment failed and automatic debit was declined."
+])
+
+Predicción categorías 1 y 4, respectivamente, donde las categorías son:
+Topic_names = {
+    0: "Bank Account services",
+    1: "Credit card / prepaid card",
+    2: "Theft / Dispute Reporting",
+    3: "Mortgage / Loan",
+    4: "Others"
+}
+
+---
+## 7. Interpretación del Rendimiento del Modelo
 
 - El modelo muestra un rendimiento consistente en categorías con vocabulario distintivo.
 
@@ -82,10 +100,9 @@ Interpretación del Rendimiento del Modelo
 
 - La matriz de confusión evidencia una correcta separación general entre clases.
 
-** Conclusión del rendimiento: ** 
+De esa manera, el modelo es estable y se desempeña adecuadamente en la clasificación automática de reclamos.
 
-El modelo es estable y se desempeña adecuadamente en la clasificación automática de reclamos.
-
+---
 ## 8. Conclusiones finales
 
 - El preprocesamiento profundo del texto fue clave para mejorar los resultados.
