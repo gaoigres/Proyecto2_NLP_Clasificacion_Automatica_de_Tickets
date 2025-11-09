@@ -106,7 +106,7 @@ De esa manera, el modelo es estable y se desempeña adecuadamente en la clasific
 
 - TF-IDF fue una representación adecuada para este tipo de datos.
 
-- Random Forest superó a otros clasificadores evaluados.
+- Regresión logística superó a otros clasificadores evaluados.
 
 - La solución es viable para integrarse en sistemas de atención al cliente.
 
