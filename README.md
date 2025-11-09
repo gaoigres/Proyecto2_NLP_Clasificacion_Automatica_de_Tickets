@@ -55,6 +55,13 @@ Se utilizó un enfoque de dos etapas:
 
 La matriz resultante permitió representar el texto como vectores numéricos listos para utilizar en modelos supervisados.
 
+Las categorías utilizadas son
+- 0: "Bank Account services",
+- 1: "Credit card / prepaid card",
+- 2: "Mortgage / Loan",
+- 3: "Theft / Dispute Reporting",
+- 4: "Others"
+
 ---
 
 ## 5. Entrenamiento de Modelos Supervisados
@@ -76,22 +83,11 @@ Motivo: mejor equilibrio entre precisión y generalización.
 
 Ejemplo de predicción:
 
-```python
-predict_topics([
-    "My credit card was charged twice and the bank rejected my dispute.",
-    "Mortgage payment failed and automatic debit was declined."
-])
-
-Predicción categorías 1 y 4, respectivamente, donde las categorías son:
-Topic_names = {
-    0: "Bank Account services",
-    1: "Credit card / prepaid card",
-    2: "Theft / Dispute Reporting",
-    3: "Mortgage / Loan",
-    4: "Others"
-}
+    - "My credit card was charged twice and the bank rejected my dispute." (Categoría Credit card / prepaid card)
+    - "Mortgage payment failed and automatic debit was declined." (Others)
 
 ---
+
 ## 7. Interpretación del Rendimiento del Modelo
 
 - El modelo muestra un rendimiento consistente en categorías con vocabulario distintivo.
@@ -103,6 +99,7 @@ Topic_names = {
 De esa manera, el modelo es estable y se desempeña adecuadamente en la clasificación automática de reclamos.
 
 ---
+
 ## 8. Conclusiones finales
 
 - El preprocesamiento profundo del texto fue clave para mejorar los resultados.
